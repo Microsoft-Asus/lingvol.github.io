@@ -32,4 +32,4 @@ jobs:
           publish_branch: master
           enable_jekyll: false
           force_orphan: true
-          cname: ${{ secrets.GITHUB_REPOSITORY }}
+          cname: lingvol.github.io
