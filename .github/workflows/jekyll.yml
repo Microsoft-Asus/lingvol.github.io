@@ -31,5 +31,5 @@ jobs:
           publish_dir: _site
           publish_branch: master
           enable_jekyll: false
-          keep_files: true
+          force_orphan: true
           cname: lingvol.github.io
