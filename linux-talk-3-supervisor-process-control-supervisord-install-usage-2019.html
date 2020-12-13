@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="//images1-focus-opensocial.googleusercontent.com" />
+    <link rel="dns-prefetch" href="//static.addtoany.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msvalidate.01" content="75B80AEDF1B43D9D9F43E161E42B34E9">
+    <meta name="yandex-verification" content="f4fff8c79a9ffec2">
+    <meta name="google-site-verification" content="tXQElX0MNmzEYpIUQWUZhn2EKP_MTm2Vbmt4-7AUas0">
+    <meta charset="UTF-8" />
+    <title>Linux Talk #3: Supervisor Process Control | Supervisord Install &amp; Usage | 2019 Ubuntu 19.10</title>
+    <meta name="description" content="Supervisor Process Control on Linux - Install &amp;amp; Usage. We&#39;ll be talking about Supervisor installing Supervisord and using S...">
+	<meta name="keywords" content="supervisor,supervisorctl tutorial,supervisorctl">
+    <meta property="og:site_name" content="Lingvol">
+    <meta property="og:url" content="https://lingvol.github.io/linux-talk-3-supervisor-process-control-supervisord-install-usage-2019.html">
+    <meta property="og:title" content="Linux Talk #3: Supervisor Process Control | Supervisord Install &amp; Usage | 2019 Ubuntu 19.10">
+    <meta property="og:image" content="https://i.ytimg.com/vi/eX7D40y9qv8/hqdefault.jpg">
+    <meta property="og:description" content="Supervisor Process Control on Linux - Install &amp;amp; Usage. We&#39;ll be talking about Supervisor installing Supervisord and using S...">
+    <meta name='twitter:card' content='summary_large_image' />
+    <link rel="canonical" href="https://lingvol.github.io/linux-talk-3-supervisor-process-control-supervisord-install-usage-2019.html" />
+    <link rel="stylesheet" href="https://lingvol.github.io/inc/main.css">
+    <noscript><style>#preloading{display: none}</style></noscript>
+</head>
+<body class="bg-light">
+    <div id="preloading">
+        <div class="loader"></div>
+    </div>
+    <nav class="navbar mb-3 navbar-expand-lg navbar-light bg-white mb-4 shadow-sm">
+        <div class="container py-2"><a class="navbar-brand" href="https://lingvol.github.io/">Lingvol</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-urls" aria-controls="navbar-urls" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <form
+                action="/search/" class="my-2 my-lg-0 offset-md-2 col-md-6 col-sm-12 px-0 mr-auto">
+                <div class="input-group"><input name="s" class="form-control rounded-0 py-2" type="text" placeholder="video search..." id="example-search-input"><span class="input-group-append"><button aria-label="search" role="button" class="btn btn-secondary rounded-0" type="submit"><span class="px-2"><svg class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg></span></button>
+                    </span>
+                </div>
+                </form>
+                <div class="collapse navbar-collapse flex-md-grow-0" id="navbar-urls">
+
+                </div>
+        </div>
+    </nav>
+    <div class="container min-height-62" >
+        <div class="resp-container" id="top_720"></div>
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <div class="bg-white"><noscript><a href="https://www.youtube.com/watch?v=eX7D40y9qv8"><img alt="Linux Talk #3: Supervisor Process Control | Supervisord Install &amp; Usage | 2019 Ubuntu 19.10" src="https://i.ytimg.com/vi/eX7D40y9qv8/hqdefault.jpg" /></a></noscript>
+                    <div id="video-player"></div>
+                    <div class="p-3">
+                        <h1 class="h5 video-title bwr">Linux Talk #3: Supervisor Process Control | Supervisord Install &amp; Usage | 2019 Ubuntu 19.10</h1>
+                        <div class="py-1 row">
+                            <div class="col-12 col-md-6 my-auto"><b class="text-danger">Share this & earn $10</b></div>
+                            <div class="col-12 col-md-6">
+                                <div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class="a2a_dd" href="https://www.addtoany.com/share"></a><a class="a2a_button_facebook"></a><a class="a2a_button_twitter"></a><a class="a2a_button_reddit"></a><a class="a2a_button_facebook_messenger"></a><a class="a2a_button_whatsapp"></a></div>
+                            </div>
+                        </div>
+                        <div align="center" class="py-1">
+
+                        </div>
+                        <div class="py-1">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="mb-2 bwr"><strong>SavvyNik</strong><br> Published at : 13 Dec 2020  </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="h-100 d-flex align-items-center justify-content-center"><a  target="_blank" rel="noopener" class="btn btn-block btn-danger bwr" href="https://www.youtube.com/watch?v=eX7D40y9qv8">Subscribe to SavvyNik</a></div>
+                                </div>
+                            </div>
+                            <div class="resp-container" id="in_post_bottomads"></div>
+                        </div>
+                        <div class="py-1">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="text-center bg-light mb-2 p-1 bwr"><span><span class="pr-1"><svg class="svg-inline--fa fa-eye fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M569.354 231.631C512.969 135.949 407.81 72 288 72 168.14 72 63.004 135.994 6.646 231.631a47.999 47.999 0 0 0 0 48.739C63.031 376.051 168.19 440 288 440c119.86 0 224.996-63.994 281.354-159.631a47.997 47.997 0 0 0 0-48.738zM288 392c-75.162 0-136-60.827-136-136 0-75.162 60.826-136 136-136 75.162 0 136 60.826 136 136 0 75.162-60.826 136-136 136zm104-136c0 57.438-46.562 104-104 104s-104-46.562-104-104c0-17.708 4.431-34.379 12.236-48.973l-.001.032c0 23.651 19.173 42.823 42.824 42.823s42.824-19.173 42.824-42.823c0-23.651-19.173-42.824-42.824-42.824l-.032.001C253.621 156.431 270.292 152 288 152c57.438 0 104 46.562 104 104z"></path></svg></span>                                        5885 views </span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="text-center bg-light p-1 bwr"><span><span class="pr-1"><svg class="svg-inline--fa fa-thumbs-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M104 224H24c-13.255 0-24 10.745-24 24v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V248c0-13.255-10.745-24-24-24zM64 472c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM384 81.452c0 42.416-25.97 66.208-33.277 94.548h101.723c33.397 0 59.397 27.746 59.553 58.098.084 17.938-7.546 37.249-19.439 49.197l-.11.11c9.836 23.337 8.237 56.037-9.308 79.469 8.681 25.895-.069 57.704-16.382 74.757 4.298 17.598 2.244 32.575-6.148 44.632C440.202 511.587 389.616 512 346.839 512l-2.845-.001c-48.287-.017-87.806-17.598-119.56-31.725-15.957-7.099-36.821-15.887-52.651-16.178-6.54-.12-11.783-5.457-11.783-11.998v-213.77c0-3.2 1.282-6.271 3.558-8.521 39.614-39.144 56.648-80.587 89.117-113.111 14.804-14.832 20.188-37.236 25.393-58.902C282.515 39.293 291.817 0 312 0c24 0 72 8 72 81.452z"></path></svg></span>                                                151 </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="text-center bg-light p-1 bwr"><span><span class="pr-1"><svg class="svg-inline--fa fa-thumbs-down fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M0 56v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H24C10.745 32 0 42.745 0 56zm40 200c0-13.255 10.745-24 24-24s24 10.745 24 24-10.745 24-24 24-24-10.745-24-24zm272 256c-20.183 0-29.485-39.293-33.931-57.795-5.206-21.666-10.589-44.07-25.393-58.902-32.469-32.524-49.503-73.967-89.117-113.111a11.98 11.98 0 0 1-3.558-8.521V59.901c0-6.541 5.243-11.878 11.783-11.998 15.831-.29 36.694-9.079 52.651-16.178C256.189 17.598 295.709.017 343.995 0h2.844c42.777 0 93.363.413 113.774 29.737 8.392 12.057 10.446 27.034 6.148 44.632 16.312 17.053 25.063 48.863 16.382 74.757 17.544 23.432 19.143 56.132 9.308 79.469l.11.11c11.893 11.949 19.523 31.259 19.439 49.197-.156 30.352-26.157 58.098-59.553 58.098H350.723C358.03 364.34 384 388.132 384 430.548 384 504 336 512 312 512z"></path></svg></span>                                                2 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="py-1 d-md-block bwr" id="video-description">Supervisor Process Control on Linux - Install &amp; Usage. We'll be talking about Supervisor installing Supervisord and using Supervisorctl.  We'll install Supervisor using terminal on Ubuntu 19.10.  This is a 2019 Linux Talk on a Program for Process Control and is intended for UNIX based systems such as Linux. Supervisor is a client/server program that allows you to control and manage processes on most UNIX based systems.  With that being said it can run on systems such as Solaris, FreeBSD, Linux, and MacOS.<br />______________________________________________________________<br />Great Amazon Items!<br />Below contains affiliate links, this means I may receive a small commission if you click one. This helps support and grow the channel. If you do use a link thank you for supporting the channel!<br /><br />My Store Front:<br /><a rel="nofollow" target="blank" href="https://www.amazon.com/shop/savvynik">https://www.amazon.com/shop/savvynik</a><br /><br />💾 💾 USB Disks and SD Cards 💾 💾 <br />2.0 SanDisk 32GB USB - <a rel="nofollow" target="blank" href="https://amzn.to/3dvkHPd">https://amzn.to/3dvkHPd</a><br />3.0 PNY Turbo 32GB USB - <a rel="nofollow" target="blank" href="https://amzn.to/2y7vjDT">https://amzn.to/2y7vjDT</a><br />3.1 Samsung FIT 128GB USB - <a rel="nofollow" target="blank" href="https://amzn.to/2WGJp9j">https://amzn.to/2WGJp9j</a><br />SanDisk 128 GB micro SD - <a rel="nofollow" target="blank" href="https://amzn.to/3c7DzCn">https://amzn.to/3c7DzCn</a><br /><br />📚📚 Learn more about Linux 📚📚<br />Linux: Installation, Config, and Cmd Basics - <a rel="nofollow" target="blank" href="https://amzn.to/34sT8Ck">https://amzn.to/34sT8Ck</a><br />Linux Cmd Line a Complete Intro - <a rel="nofollow" target="blank" href="https://amzn.to/2ViHXrx">https://amzn.to/2ViHXrx</a><br />Linux Basics for Hackers - <a rel="nofollow" target="blank" href="https://amzn.to/2JTSZyj">https://amzn.to/2JTSZyj</a><br />Linux Pocket Guide - <a rel="nofollow" target="blank" href="https://amzn.to/2Xpnyni">https://amzn.to/2Xpnyni</a><br />How Linux Works - <a rel="nofollow" target="blank" href="https://amzn.to/2RrQEOW">https://amzn.to/2RrQEOW</a><br />Linux Bible - <a rel="nofollow" target="blank" href="https://amzn.to/2XugXrJ">https://amzn.to/2XugXrJ</a><br />Linux for Dummies - <a rel="nofollow" target="blank" href="https://amzn.to/3e9VlXy">https://amzn.to/3e9VlXy</a><br />Kali Linux Hacking - <a rel="nofollow" target="blank" href="https://amzn.to/2y2F7io">https://amzn.to/2y2F7io</a><br /><br />🖥🖥 MISC Electronics that are Great! 🖥🖥<br />TP-Link AC1750 Smart WiFi Router (powerful) - <a rel="nofollow" target="blank" href="https://amzn.to/3aZZI5E">https://amzn.to/3aZZI5E</a><br />NETGEAR Nighthawk Smart WiFi Router (fast) - <a rel="nofollow" target="blank" href="https://amzn.to/2RsKQ8d">https://amzn.to/2RsKQ8d</a><br />Streaming Media Player 4K/HD/HDR (entertaining) - <a rel="nofollow" target="blank" href="https://amzn.to/2JVdlXL">https://amzn.to/2JVdlXL</a><br />Acer Aspire 5 Slim Laptop, 15.6” HD (cheap) - <a rel="nofollow" target="blank" href="https://amzn.to/2xbYAxc">https://amzn.to/2xbYAxc</a><br />OHill Cable Clips, 16 Pack Black (organization) - <a rel="nofollow" target="blank" href="https://amzn.to/2JV9iuC">https://amzn.to/2JV9iuC</a><br />Smart Plug Power Adapter (automation) - <a rel="nofollow" target="blank" href="https://amzn.to/2xabbRx">https://amzn.to/2xabbRx</a><br />Outdoor/Indoor Smart Security Camera (security) - <a rel="nofollow" target="blank" href="https://amzn.to/3e90A9T">https://amzn.to/3e90A9T</a><br /><br />From the vid<br />[program:savvyprogram]<br />command=/home/savvynik/Desktop/SavvyProgram<br />autostart=true<br />autorestart=true<br />stderr_logfile=/var/log/savvyprogram.err.log<br />stdout_logfile=/var/log/savvyprogram.out.log<br /><br />Linux Talk : <br />Talk #1 ZFS vs EXT4 Storage Benchmark - <a rel="nofollow" target="blank" href="https://youtu.be/a4IuijHVuog">https://youtu.be/a4IuijHVuog</a><br />Talk #2 ZFS vs EXT4 Memory Usage - <a rel="nofollow" target="blank" href="https://youtu.be/csHR1soA_Rk">https://youtu.be/csHR1soA_Rk</a><br /><br />Review and Walkthroughs:<br />Fedora 31 - <a rel="nofollow" target="blank" href="https://youtu.be/QSC2-WkMb8Y">https://youtu.be/QSC2-WkMb8Y</a><br />MX Linux - <a rel="nofollow" target="blank" href="https://youtu.be/7MgssE2Q9Es">https://youtu.be/7MgssE2Q9Es</a><br />ArcoLinux - <a rel="nofollow" target="blank" href="https://youtu.be/04VYEj2OlCU">https://youtu.be/04VYEj2OlCU</a><br />Solus OS - <a rel="nofollow" target="blank" href="https://youtu.be/pvLjjbXFv5Q">https://youtu.be/pvLjjbXFv5Q</a><br />Endeavour OS - <a rel="nofollow" target="blank" href="https://youtu.be/wV8bqVWQESg">https://youtu.be/wV8bqVWQESg</a><br />CentOS 8 - <a rel="nofollow" target="blank" href="https://youtu.be/T_yZuQVDMG4">https://youtu.be/T_yZuQVDMG4</a><br />PopOS! - <a rel="nofollow" target="blank" href="https://youtu.be/Vblwblo9Vdw">https://youtu.be/Vblwblo9Vdw</a><br />Parrot Security OS: <a rel="nofollow" target="blank" href="https://youtu.be/zEsJk61JZpo">https://youtu.be/zEsJk61JZpo</a><br />Fedora Workstation: <a rel="nofollow" target="blank" href="https://youtu.be/JOrZ1DnxdQ8">https://youtu.be/JOrZ1DnxdQ8</a><br />Elementary OS: <a rel="nofollow" target="blank" href="https://youtu.be/BuUsD4NhwIo">https://youtu.be/BuUsD4NhwIo</a><br />MX Linux: <a rel="nofollow" target="blank" href="https://youtu.be/Oj_g62ESQ4E">https://youtu.be/Oj_g62ESQ4E</a><br />Linux Lite: <a rel="nofollow" target="blank" href="https://youtu.be/EEGTJ-SioMg">https://youtu.be/EEGTJ-SioMg</a><br /><br />Install Tutorials:<br />Zorin 15: <a rel="nofollow" target="blank" href="https://youtu.be/r_ONJwjrC80">https://youtu.be/r_ONJwjrC80</a><br />Fedora 31: <a rel="nofollow" target="blank" href="https://youtu.be/4qmPDKPck68">https://youtu.be/4qmPDKPck68</a><br />MX Linux 19: <a rel="nofollow" target="blank" href="https://youtu.be/xRrXgBmO4Sc">https://youtu.be/xRrXgBmO4Sc</a><br />Ubuntu 19.10 : <a rel="nofollow" target="blank" href="https://youtu.be/7Z6oLnPLGhI">https://youtu.be/7Z6oLnPLGhI</a><br />ArcoLinux : <a rel="nofollow" target="blank" href="https://youtu.be/HClRzTcgtn4">https://youtu.be/HClRzTcgtn4</a><br />Solus Linux OS : <a rel="nofollow" target="blank" href="https://youtu.be/2MehGx3jPxY">https://youtu.be/2MehGx3jPxY</a><br />Endeavour OS : <a rel="nofollow" target="blank" href="https://youtu.be/wV8bqVWQESg">https://youtu.be/wV8bqVWQESg</a><br />CentOS 8 NetInstall : <a rel="nofollow" target="blank" href="https://youtu.be/nNNkZ0I2DFw">https://youtu.be/nNNkZ0I2DFw</a><br />Parrot Security OS: <a rel="nofollow" target="blank" href="https://youtu.be/TDJBFvZteBA">https://youtu.be/TDJBFvZteBA</a><br />CentOS 8: <a rel="nofollow" target="blank" href="https://youtu.be/FLl2DETdww4">https://youtu.be/FLl2DETdww4</a><br />Fedora 30: <a rel="nofollow" target="blank" href="https://youtu.be/nKqXKsgfFBM">https://youtu.be/nKqXKsgfFBM</a><br />Elementary OS 5: <a rel="nofollow" target="blank" href="https://youtu.be/N7V_vBO4-2U">https://youtu.be/N7V_vBO4-2U</a><br />Arch Linux : <a rel="nofollow" target="blank" href="https://youtu.be/QoyszQKX6Pk">https://youtu.be/QoyszQKX6Pk</a><br />Ubuntu 18: <a rel="nofollow" target="blank" href="https://youtu.be/u33oBgCUMos">https://youtu.be/u33oBgCUMos</a><br />MX Linux 18: <a rel="nofollow" target="blank" href="https://youtu.be/ZQXRrEvZ0KU">https://youtu.be/ZQXRrEvZ0KU</a><br />Linux Lite 4: <a rel="nofollow" target="blank" href="https://youtu.be/ySmRl388tBE">https://youtu.be/ySmRl388tBE</a><br />Debian on Vbox: <a rel="nofollow" target="blank" href="https://youtu.be/zikeyJS317Q">https://youtu.be/zikeyJS317Q</a><br />Manjaro 18: <a rel="nofollow" target="blank" href="https://youtu.be/d300z09Pwvs">https://youtu.be/d300z09Pwvs</a><br />Debian 10: <a rel="nofollow" target="blank" href="https://youtu.be/XiOhYgCPshU">https://youtu.be/XiOhYgCPshU</a><br />Ubuntu Server 19: <a rel="nofollow" target="blank" href="https://youtu.be/AfoA3yi43r8">https://youtu.be/AfoA3yi43r8</a><br />Linux Mint 19: <a rel="nofollow" target="blank" href="https://youtu.be/_LZy_ms2jY4">https://youtu.be/_LZy_ms2jY4</a><br />Debian 9: <a rel="nofollow" target="blank" href="https://youtu.be/WZ08XMoFQco">https://youtu.be/WZ08XMoFQco</a><br /><br />Live Episodes:<br />PopOS! SimpleList C/C++ Episode 1 - <a rel="nofollow" target="blank" href="https://youtu.be/G7ZEOCIxSRw">https://youtu.be/G7ZEOCIxSRw</a><br />EndeavourOS SimpleList C/C++ Episode 2 - <a rel="nofollow" target="blank" href="https://youtu.be/-Ay2_jIF2_w">https://youtu.be/-Ay2_jIF2_w</a><br /><br />What’s the difference? <br />Debian vs Ubuntu: <a rel="nofollow" target="blank" href="https://youtu.be/pfKeSGKzBgg">https://youtu.be/pfKeSGKzBgg</a><br />Debian 10 vs Debian 9: <a rel="nofollow" target="blank" href="https://youtu.be/A3LQMplUqjo">https://youtu.be/A3LQMplUqjo</a><br /><br />Useful Links:<br />Manual Install - <a rel="nofollow" target="blank" href="http://supervisord.org/installing.html">http://supervisord.org/installing.html</a><br />ManPages - <a rel="nofollow" target="blank" href="http://manpages.ubuntu.com/manpages/cosmic/man1/supervisor.1.html">http://manpages.ubuntu.com/manpages/cosmic/man1/supervisor.1.html</a><br />Description &amp; Switches - <a rel="nofollow" target="blank" href="http://supervisord.org/introduction.html">http://supervisord.org/introduction.html</a>
+</div>
+                        <div class="d-none"><span>supervisor</span><span>supervisorctl tutorial</span><span>supervisorctl</span></div>
+                        <hr/>
+                        <div class="py-3">
+     <div id="disqus_thread"></div>
+                            <script>
+                            var disqus_config = function () {
+                                this.page.url = "https://lingvol.github.io/linux-talk-3-supervisor-process-control-supervisord-install-usage-2019.html";
+                                this.page.vid_identifier = "/linux-talk-3-supervisor-process-control-supervisord-install-usage-2019.html";
+                            };
+                            
+                            (function() { // DON'T EDIT BELOW THIS LINE
+                                var d = document, s = d.createElement('script');
+
+                                s.src = 'https://xlx.disqus.com/embed.js';
+
+                                s.setAttribute('data-timestamp', +new Date());
+                                (d.head || d.body).appendChild(s);
+                            })();
+                            </script>
+                            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+                         </div>
+                    </div>
+                </div>
+                <div class="position-sticky fixed-top d-md-block d-none">
+                    <div align="center" class="py-2">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+            <div class="mb-4">
+                <div class="resp-container py-3" id="sidebar_300"></div>
+            </div>
+                
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/how-to-maximize-your-moment-of-opportunity-apostle-grace-lubega.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/KKDkdHqO0mQ/mqdefault.jpg" alt="How To Maximize Your Moment Of Opportunity | Apostle Grace Lubega">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">How To Maximize Your Moment Of Opportunity | Apostle Grace Lubega</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/mental-toughness-powerful-motivational-speech.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/nvmoShd9wMc/mqdefault.jpg" alt="MENTAL TOUGHNESS - Powerful Motivational Speech">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">MENTAL TOUGHNESS - Powerful Motivational Speech</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/llc-is-a-disregarded-entity-what-does-that-mean.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/9ZpBH5FpzPE/mqdefault.jpg" alt="LLC is a disregarded Entity. What does that mean?">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">LLC is a disregarded Entity. What does that mean?</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/reading-large-numbers-in-english.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/jZlff0TirvI/mqdefault.jpg" alt="Reading Large Numbers in English">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Reading Large Numbers in English</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/what-is-a-culvert.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/15XJDmawbYU/mqdefault.jpg" alt="What Is a Culvert?">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">What Is a Culvert?</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/wide-variety-of-sweets-namkeens-and-dry-fruits-evergreen.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/YfIj1CREukQ/mqdefault.jpg" alt="Wide variety of sweets, namkeens and dry fruits-Evergreen">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Wide variety of sweets, namkeens and dry fruits-Evergreen</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/all-the-bright-places-starring-elle-fanning-justice-smith-official-tra.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/zfQXKVCudec/mqdefault.jpg" alt="All the Bright Places starring Elle Fanning &amp; Justice Smith | Official Trailer | Netflix">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">All the Bright Places starring Elle Fanning &amp; Justice Smith | Official Trailer | Netflix</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/real-madrid-4-5-lionel-messi-600-million-team-vs-priceless-man-hd.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/-hKh15FCRT8/mqdefault.jpg" alt="Real Madrid 4-5 Lionel Messi  ► €600 Million Team vs Priceless Man ||HD||">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Real Madrid 4-5 Lionel Messi  ► €600 Million Team vs Priceless Man ||HD||</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/how-to-draw-an-eye-step-by-step.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/TtrqSIhZR_Y/mqdefault.jpg" alt="How to Draw an Eye - Step by Step">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">How to Draw an Eye - Step by Step</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/feeling-tired-all-the-time-try-these-natural-energy-boosters.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/U5Cb11BLKso/mqdefault.jpg" alt="Feeling Tired All the Time? Try These Natural Energy Boosters">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Feeling Tired All the Time? Try These Natural Energy Boosters</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/mathematics-genius.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/Liqs0k4bXvY/mqdefault.jpg" alt="Mathematics genius">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Mathematics genius</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/bodybuilder-transforms-into-a-drag-queen-miami-muscle.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/5nwTVrcoEgo/mqdefault.jpg" alt="Bodybuilder Transforms Into A Drag Queen | MIAMI MUSCLE">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Bodybuilder Transforms Into A Drag Queen | MIAMI MUSCLE</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/stephanie-poetri-appreciate-lyrics-english-ver.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/mmsep920ioM/mqdefault.jpg" alt="Stephanie Poetri – Appreciate (Lyrics) English Ver.">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Stephanie Poetri – Appreciate (Lyrics) English Ver.</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/rich-student-vs-poor-student-in-school-life-9-awkward-school-moments-b.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/BnG9grpBmHM/mqdefault.jpg" alt="RICH STUDENT VS POOR STUDENT IN SCHOOL LIFE || 9 Awkward School Moments by RATATA">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">RICH STUDENT VS POOR STUDENT IN SCHOOL LIFE || 9 Awkward School Moments by RATATA</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/3-ways-to-lose-weight-without-dieting.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/RV6YAWenWpU/mqdefault.jpg" alt="3 Ways to Lose Weight Without Dieting">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">3 Ways to Lose Weight Without Dieting</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/hiding-mafia-evidence-firefighter-in-car-engine-cops-are-pigs-prank.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/tcOXPCQX5uw/mqdefault.jpg" alt="Hiding Mafia Evidence, Firefighter in Car Engine, Cops are Pigs Prank">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Hiding Mafia Evidence, Firefighter in Car Engine, Cops are Pigs Prank</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/get-used-to-is-are-am-used-to-used-to.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/oPHQX3fGqhw/mqdefault.jpg" alt="get used to/is/are/am + used to/used to">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">get used to/is/are/am + used to/used to</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/basically-gnolls.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/zfsXdBbB4z4/mqdefault.jpg" alt="Basically Gnolls">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Basically Gnolls</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/the-try-guys-cook-dumplings-without-a-recipe.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/JoGjIRVY9t4/mqdefault.jpg" alt="The Try Guys Cook Dumplings Without A Recipe">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">The Try Guys Cook Dumplings Without A Recipe</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/64th-street-a-detective-story-no-death-clear.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/uituNMCE8zo/mqdefault.jpg" alt="64th Street: A Detective Story - No Death Clear">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">64th Street: A Detective Story - No Death Clear</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/introduction.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/7yqOF9V25VA/mqdefault.jpg" alt="Introduction">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Introduction</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/c1ru2p5rh8a.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/c1RU2p5RH8A/mqdefault.jpg" alt="Изготовление изделий из дерева">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Изготовление изделий из дерева</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/getting-the-moustache-hairstyle-because-i-said-i-will.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/WQbk5xJajnU/mqdefault.jpg" alt="Getting The Moustache Hairstyle (because I said I will🥺)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Getting The Moustache Hairstyle (because I said I will🥺)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/lion-leads-review-warning-don-t-get-this-without-my-custom-bonuses.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/1pzoDymXhxA/mqdefault.jpg" alt="Lion Leads Review ⚠️ WARNING ⚠️ DON&#39;T GET THIS WITHOUT MY 👷 CUSTOM 👷 BONUSES!!">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Lion Leads Review ⚠️ WARNING ⚠️ DON&#39;T GET THIS WITHOUT MY 👷 CUSTOM 👷 BONUSES!!</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/a-race-to-run-out-of-fuel-in-ukraine-top-gear-bbc.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/5YtVV1VJ4f8/mqdefault.jpg" alt="A race to run out of fuel in Ukraine | Top Gear - BBC">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">A race to run out of fuel in Ukraine | Top Gear - BBC</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/what-is-past-consideration.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/DPWr9QEEITo/mqdefault.jpg" alt="What is past consideration?">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">What is past consideration?</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/stop-dating-your-issues.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/4riTxSam_QQ/mqdefault.jpg" alt="Stop Dating Your Issues">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Stop Dating Your Issues</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/blue-get-down-on-it.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/J9z9mujofcg/mqdefault.jpg" alt="Blue - Get Down On It">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Blue - Get Down On It</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/general-knowledge-quiz-forfeits-ft-harry-pinero-darkest-man.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/dmhIcRKWLH4/mqdefault.jpg" alt="GENERAL KNOWLEDGE QUIZ FORFEITS FT HARRY PINERO &amp; DARKEST MAN">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">GENERAL KNOWLEDGE QUIZ FORFEITS FT HARRY PINERO &amp; DARKEST MAN</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/being-saintly-is-not-a-substitute-for-being-sensible.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/pokge9FT1gg/mqdefault.jpg" alt="Being saintly is not a substitute for being sensible">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Being saintly is not a substitute for being sensible</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/shelf-supports-for-cupboards-wardrobes-and-bookcases-video-6-6.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/158VLQbt5VY/mqdefault.jpg" alt="Shelf Supports for Cupboards Wardrobes and Bookcases. Video 6/6">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Shelf Supports for Cupboards Wardrobes and Bookcases. Video 6/6</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/travis-scott-goosebumps-ft-kendrick-lamar.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/Dst9gZkq1a8/mqdefault.jpg" alt="Travis Scott - goosebumps ft. Kendrick Lamar">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Travis Scott - goosebumps ft. Kendrick Lamar</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/shadowy-figure-moves-behind-nick-groff-paranormal-lockdown.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/qkeCfNjm4-Y/mqdefault.jpg" alt="Shadowy Figure Moves Behind Nick Groff | Paranormal Lockdown">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Shadowy Figure Moves Behind Nick Groff | Paranormal Lockdown</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/why-you-should-use-niacinamide-ingredient-highlight-james-welsh.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/B5pc0NFQCuU/mqdefault.jpg" alt="Why You Should Use Niacinamide - Ingredient Highlight ✖  James Welsh">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Why You Should Use Niacinamide - Ingredient Highlight ✖  James Welsh</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/how-to-intensify-your-longing-for-the-ultimate-sadhguru.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/SmFivBAWAgs/mqdefault.jpg" alt="How to Intensify Your Longing for the Ultimate? | Sadhguru">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">How to Intensify Your Longing for the Ultimate? | Sadhguru</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/4-4-solitude-and-how-to-make-use-of-it-zoom-04-2020.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/wqvQNf5Lbwc/mqdefault.jpg" alt="4/4 Solitude and how to make use of it. Zoom 04.2020">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">4/4 Solitude and how to make use of it. Zoom 04.2020</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/vlad-and-nikita-are-looking-for-a-new-playhouse.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/6xD3smRNZJc/mqdefault.jpg" alt="Vlad and Nikita are looking for a new Playhouse">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Vlad and Nikita are looking for a new Playhouse</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/spider-man-but-it-s-awkward.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/03P_hKMnmpI/mqdefault.jpg" alt="SPIDER-MAN but it&#39;s awkward">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">SPIDER-MAN but it&#39;s awkward</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/top-10-most-amazing-video-in-the-world-you-need-to-see.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/SHPf0Rmk30k/mqdefault.jpg" alt="Top 10 Most Amazing Video in The World You Need To See">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Top 10 Most Amazing Video in The World You Need To See</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/asmr-for-goodness-sake-go-to-sleep.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/yhIzFMSoLiM/mqdefault.jpg" alt="[asmr] for goodness sake. go to sleep.">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">[asmr] for goodness sake. go to sleep.</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/bad-religion-time-disregard-lyrics.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/T5vEbpDROCY/mqdefault.jpg" alt="Bad Religion - Time &amp; Disregard (Lyrics)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Bad Religion - Time &amp; Disregard (Lyrics)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/story-of-kids-which-contains-jokes.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/15cl8X7q_10/mqdefault.jpg" alt="Story of kids which contains jokes">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Story of kids which contains jokes</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/how-to-get-rid-of-that-saggy-skin.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/1tJIAsoC1bo/mqdefault.jpg" alt="How to Get Rid of That Saggy Skin">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">How to Get Rid of That Saggy Skin</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/red-army-choir-civil-war-songs.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/GiBNirs38Ow/mqdefault.jpg" alt="Red Army Choir: Civil War Songs.">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Red Army Choir: Civil War Songs.</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/can-running-help-you-live-longer-watch-news-review.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/cFWx_6GT2rU/mqdefault.jpg" alt="Can running help you live longer? Watch News Review">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Can running help you live longer? Watch News Review</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/growth-strategy-internal-v-external-growth.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/ny29zZmmwkM/mqdefault.jpg" alt="Growth Strategy: Internal v External Growth">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Growth Strategy: Internal v External Growth</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/australia-was-settled-earlier-than-we-thought.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/PzCO8nsTVXg/mqdefault.jpg" alt="Australia was settled earlier than we thought">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Australia was settled earlier than we thought</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/mouth-exercises-for-clear-speech.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/gp2VvmUJJc8/mqdefault.jpg" alt="Mouth exercises for CLEAR SPEECH">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Mouth exercises for CLEAR SPEECH</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/10-longest-body-parts-in-the-world.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/YYBUElo5A_E/mqdefault.jpg" alt="10 LONGEST BODY PARTS IN THE WORLD">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">10 LONGEST BODY PARTS IN THE WORLD</h2>
+    </div>
+
+            </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+        function load_vid() { var player = document.getElementById('video-player'); player.innerHTML = labnolThumb(); player.onclick = labnolIframe; } function labnolThumb() { return '<div class="d-flex align-items-center justify-content-center"><div class="image-16by9"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/eX7D40y9qv8/hqdefault.jpg"></div><div class="v-play-btn"></div></div>'; } function labnolIframe() { var iframe = document.createElement("iframe"); iframe.setAttribute("src", "//www.youtube-nocookie.com/embed/eX7D40y9qv8?rel=0&amp;showinfo=0"); iframe.setAttribute("frameborder", "0"); iframe.setAttribute("allowfullscreen", "1"); var div = document.createElement("div"); div.setAttribute("class", "embed-responsive embed-responsive-16by9"); div.innerHTML = iframe.outerHTML; this.parentNode.replaceChild(div, this); } load_vid()
+    </script>
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
+        <footer class="mt-auto bg-white pt-4">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <h5 class="text-uppercase">Lingvol Network</h5>
+                    <p>Entertainment content from all over the web.</p>
+                </div>
+                <hr class="clearfix w-100 d-md-none pb-3">
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5>Privacy & Terms</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="">DMCA</a></li>
+                        <li><a href="">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center py-3"> © Copyright : <a target="_blank" rel="noopener" href="https://www.youtube.com"> youtube.com</a></div>
+    </footer>
+    <script>
+        var cb = function() { var link = document.createElement('link'); link.rel = 'stylesheet'; link.href = 'https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css'; var h = document.getElementsByTagName('head')[0]; h.appendChild(link); if (link.addEventListener) { link.addEventListener('load', function() { document.getElementById('preloading').style.display = "none"; }, false); } }; var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame; if (raf) raf(cb); else window.addEventListener('load', cb);
+    </script>
+    <script async="" src="https://lingvol.github.io/js/app.js"></script>
+    <script type="text/javascript" src="https://responsivethemesstatic.github.io/static/wp.js"></script>
+    <script type="text/javascript">
+        if(!Histats_variables){var Histats_variables=[];}
+        Histats_variables.push("tags","https://lingvol.github.io");
+        var _Hasync= _Hasync|| [];
+        _Hasync.push(['Histats.start', '1,4360507,4,0,0,0,00000000']);
+        _Hasync.push(['Histats.fasi', '1']);
+        _Hasync.push(['Histats.track_hits', '']);
+        (function() {
+        var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+        hs.src = ('//s10.histats.com/js15_as.js');
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+        })();
+    </script>
+</body>
+</html>
