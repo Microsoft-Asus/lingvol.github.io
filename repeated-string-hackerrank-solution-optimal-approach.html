@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="//images1-focus-opensocial.googleusercontent.com" />
+    <link rel="dns-prefetch" href="//static.addtoany.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msvalidate.01" content="75B80AEDF1B43D9D9F43E161E42B34E9">
+    <meta name="yandex-verification" content="f4fff8c79a9ffec2">
+    <meta name="google-site-verification" content="tXQElX0MNmzEYpIUQWUZhn2EKP_MTm2Vbmt4-7AUas0">
+    <meta charset="UTF-8" />
+    <title>Repeated String HackerRank Solution [Optimal Approach]</title>
+    <meta name="description" content="Repeated String HackerRank Solution: In this video, I have solved hackerrank Repeated String problem within a given time limit....">
+	<meta name="keywords" content="how to,solve,hackerrank">
+    <meta property="og:site_name" content="Lingvol">
+    <meta property="og:url" content="https://lingvol.github.io/repeated-string-hackerrank-solution-optimal-approach.html">
+    <meta property="og:title" content="Repeated String HackerRank Solution [Optimal Approach]">
+    <meta property="og:image" content="https://i.ytimg.com/vi/d5xLkTvJDWY/hqdefault.jpg">
+    <meta property="og:description" content="Repeated String HackerRank Solution: In this video, I have solved hackerrank Repeated String problem within a given time limit....">
+    <meta name='twitter:card' content='summary_large_image' />
+    <link rel="canonical" href="https://lingvol.github.io/repeated-string-hackerrank-solution-optimal-approach.html" />
+    <link rel="stylesheet" href="https://lingvol.github.io/inc/main.css">
+    <noscript><style>#preloading{display: none}</style></noscript>
+</head>
+<body class="bg-light">
+    <div id="preloading">
+        <div class="loader"></div>
+    </div>
+    <nav class="navbar mb-3 navbar-expand-lg navbar-light bg-white mb-4 shadow-sm">
+        <div class="container py-2"><a class="navbar-brand" href="https://lingvol.github.io/">Lingvol</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-urls" aria-controls="navbar-urls" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <form
+                action="/search/" class="my-2 my-lg-0 offset-md-2 col-md-6 col-sm-12 px-0 mr-auto">
+                <div class="input-group"><input name="s" class="form-control rounded-0 py-2" type="text" placeholder="video search..." id="example-search-input"><span class="input-group-append"><button aria-label="search" role="button" class="btn btn-secondary rounded-0" type="submit"><span class="px-2"><svg class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg></span></button>
+                    </span>
+                </div>
+                </form>
+                <div class="collapse navbar-collapse flex-md-grow-0" id="navbar-urls">
+
+                </div>
+        </div>
+    </nav>
+    <div class="container min-height-62" >
+        <div class="resp-container" id="top_720"></div>
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <div class="bg-white"><noscript><a href="https://www.youtube.com/watch?v=d5xLkTvJDWY"><img alt="Repeated String HackerRank Solution [Optimal Approach]" src="https://i.ytimg.com/vi/d5xLkTvJDWY/hqdefault.jpg" /></a></noscript>
+                    <div id="video-player"></div>
+                    <div class="p-3">
+                        <h1 class="h5 video-title bwr">Repeated String HackerRank Solution [Optimal Approach]</h1>
+                        <div class="py-1 row">
+                            <div class="col-12 col-md-6 my-auto"><b class="text-danger">Share this & earn $10</b></div>
+                            <div class="col-12 col-md-6">
+                                <div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class="a2a_dd" href="https://www.addtoany.com/share"></a><a class="a2a_button_facebook"></a><a class="a2a_button_twitter"></a><a class="a2a_button_reddit"></a><a class="a2a_button_facebook_messenger"></a><a class="a2a_button_whatsapp"></a></div>
+                            </div>
+                        </div>
+                        <div align="center" class="py-1">
+
+                        </div>
+                        <div class="py-1">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="mb-2 bwr"><strong>JAVAAID - Coding Interview Preparation</strong><br> Published at : 14 Dec 2020  </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="h-100 d-flex align-items-center justify-content-center"><a  target="_blank" rel="noopener" class="btn btn-block btn-danger bwr" href="https://www.youtube.com/watch?v=d5xLkTvJDWY">Subscribe to JAVAAID - Coding Interview Preparation</a></div>
+                                </div>
+                            </div>
+                            <div class="resp-container" id="in_post_bottomads"></div>
+                        </div>
+                        <div class="py-1">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="text-center bg-light mb-2 p-1 bwr"><span><span class="pr-1"><svg class="svg-inline--fa fa-eye fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M569.354 231.631C512.969 135.949 407.81 72 288 72 168.14 72 63.004 135.994 6.646 231.631a47.999 47.999 0 0 0 0 48.739C63.031 376.051 168.19 440 288 440c119.86 0 224.996-63.994 281.354-159.631a47.997 47.997 0 0 0 0-48.738zM288 392c-75.162 0-136-60.827-136-136 0-75.162 60.826-136 136-136 75.162 0 136 60.826 136 136 0 75.162-60.826 136-136 136zm104-136c0 57.438-46.562 104-104 104s-104-46.562-104-104c0-17.708 4.431-34.379 12.236-48.973l-.001.032c0 23.651 19.173 42.823 42.824 42.823s42.824-19.173 42.824-42.823c0-23.651-19.173-42.824-42.824-42.824l-.032.001C253.621 156.431 270.292 152 288 152c57.438 0 104 46.562 104 104z"></path></svg></span>                                        11854 views </span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="text-center bg-light p-1 bwr"><span><span class="pr-1"><svg class="svg-inline--fa fa-thumbs-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M104 224H24c-13.255 0-24 10.745-24 24v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V248c0-13.255-10.745-24-24-24zM64 472c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM384 81.452c0 42.416-25.97 66.208-33.277 94.548h101.723c33.397 0 59.397 27.746 59.553 58.098.084 17.938-7.546 37.249-19.439 49.197l-.11.11c9.836 23.337 8.237 56.037-9.308 79.469 8.681 25.895-.069 57.704-16.382 74.757 4.298 17.598 2.244 32.575-6.148 44.632C440.202 511.587 389.616 512 346.839 512l-2.845-.001c-48.287-.017-87.806-17.598-119.56-31.725-15.957-7.099-36.821-15.887-52.651-16.178-6.54-.12-11.783-5.457-11.783-11.998v-213.77c0-3.2 1.282-6.271 3.558-8.521 39.614-39.144 56.648-80.587 89.117-113.111 14.804-14.832 20.188-37.236 25.393-58.902C282.515 39.293 291.817 0 312 0c24 0 72 8 72 81.452z"></path></svg></span>                                                163 </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="text-center bg-light p-1 bwr"><span><span class="pr-1"><svg class="svg-inline--fa fa-thumbs-down fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M0 56v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H24C10.745 32 0 42.745 0 56zm40 200c0-13.255 10.745-24 24-24s24 10.745 24 24-10.745 24-24 24-24-10.745-24-24zm272 256c-20.183 0-29.485-39.293-33.931-57.795-5.206-21.666-10.589-44.07-25.393-58.902-32.469-32.524-49.503-73.967-89.117-113.111a11.98 11.98 0 0 1-3.558-8.521V59.901c0-6.541 5.243-11.878 11.783-11.998 15.831-.29 36.694-9.079 52.651-16.178C256.189 17.598 295.709.017 343.995 0h2.844c42.777 0 93.363.413 113.774 29.737 8.392 12.057 10.446 27.034 6.148 44.632 16.312 17.053 25.063 48.863 16.382 74.757 17.544 23.432 19.143 56.132 9.308 79.469l.11.11c11.893 11.949 19.523 31.259 19.439 49.197-.156 30.352-26.157 58.098-59.553 58.098H350.723C358.03 364.34 384 388.132 384 430.548 384 504 336 512 312 512z"></path></svg></span>                                                6 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="py-1 d-md-block bwr" id="video-description">Repeated String HackerRank Solution: In this video, I have solved hackerrank Repeated String problem within a given time limit.<br />👉 Must Join Coding interview preparation group:  <a rel="nofollow" target="blank" href="https://www.facebook.com/groups/codingip">https://www.facebook.com/groups/codingip</a><br /><br /><br />This hackerrank problem is a part of Practice | Algorithms| Implementation | Repeated String hackerrank challenge.<br /><br />For simplicity, I have divided this hackerrank tutorial into 3 parts.<br />     [00:00] Understanding the problem statement.<br />     [05:16] Building the logic to solve the problem.<br />     [13:10] Coding the logic using java (you can use your own preferred programming language).<br /><br />🔴 DONT CLICK THIS: <a rel="nofollow" target="blank" href="https://bit.ly/2G4cEuc">https://bit.ly/2G4cEuc</a><br /><br />👍 Like us on Facebook: <a rel="nofollow" target="blank" href="https://www.facebook.com/HackerRankSolutionTutorials">https://www.facebook.com/HackerRankSolutionTutorials</a><br /><br />💎Share this video with your friend: <a rel="nofollow" target="blank" href="https://youtu.be/d5xLkTvJDWY">https://youtu.be/d5xLkTvJDWY</a><br /><br /> ✚ Join our community ►<br /><br />       👉 Coding interview preparation group:  <a rel="nofollow" target="blank" href="https://www.facebook.com/groups/codingip">https://www.facebook.com/groups/codingip</a><br />       👉 Telegram link for algorithmic tutorial: <a rel="nofollow" target="blank" href="https://t.me/javaaid">https://t.me/javaaid</a><br />       👉 Telegram link for hackerrank solutions: <a rel="nofollow" target="blank" href="https://t.me/hackerranksolutions">https://t.me/hackerranksolutions</a><br /><br /><br />📖 Resources ►<br /><br />        🙋 Problem statement: <a rel="nofollow" target="blank" href="https://www.hackerrank.com/challenges/repeated-string/problem">https://www.hackerrank.com/challenges/repeated-string/problem</a><br /><br />         💡 Source code: <a rel="nofollow" target="blank" href="https://github.com/Java-aid/Hackerrank-Solutions/blob/master/HackerRankDashboard/CoreCS/GeneralProgramming/src/main/java/com/javaaid/hackerrank/solutions/generalprogramming/basicprogramming/RepeatedString.java">https://github.com/Java-aid/Hackerrank-Solutions/blob/master/HackerRankDashboard/CoreCS/GeneralProgramming/src/main/java/com/javaaid/hackerrank/solutions/generalprogramming/basicprogramming/RepeatedString.java</a><br /><br />✅ Recommended playlists ►<br /><br />         👉 All hackerrank solutions: <a rel="nofollow" target="blank" href="https://www.youtube.com/watch?v=oz_yowFTrgs&amp;list=PLSIpQf0NbcCltzNFrOJkQ4J4AAjW3TSmA">https://www.youtube.com/watch?v=oz_yowFTrgs&amp;list=PLSIpQf0NbcCltzNFrOJkQ4J4AAjW3TSmA</a><br />         👉 New To JAVAAID ? Watch These Videos: <a rel="nofollow" target="blank" href="https://www.youtube.com/watch?v=pVS3yhlzrlQ&amp;list=PLSIpQf0NbcClvBksfrr_jOpZCraiog3-J">https://www.youtube.com/watch?v=pVS3yhlzrlQ&amp;list=PLSIpQf0NbcClvBksfrr_jOpZCraiog3-J</a><br />         👉 Algorithms Fundamental: <a rel="nofollow" target="blank" href="https://www.youtube.com/playlist?list=PLSIpQf0NbcCk2O05hkxHPtVqGRGtnClh8">https://www.youtube.com/playlist?list=PLSIpQf0NbcCk2O05hkxHPtVqGRGtnClh8</a><br />         👉 Coding Interview Questions: <a rel="nofollow" target="blank" href="https://www.youtube.com/playlist?list=PLSIpQf0NbcCm1HjcbM6aAoDUdpZyS1YBP">https://www.youtube.com/playlist?list=PLSIpQf0NbcCm1HjcbM6aAoDUdpZyS1YBP</a><br />         👉 Dynamic Programming Tutorial For Beginner: <a rel="nofollow" target="blank" href="https://www.youtube.com/watch?v=ewXklhesC-w&amp;list=PLSIpQf0NbcClDpWE58Y-oSJro_W3LO8Nb">https://www.youtube.com/watch?v=ewXklhesC-w&amp;list=PLSIpQf0NbcClDpWE58Y-oSJro_W3LO8Nb</a><br /><br /><br />👋 Let’s Connect ►<br /><br />          Facebook: <a rel="nofollow" target="blank" href="https://www.facebook.com/coolkanahaiya">https://www.facebook.com/coolkanahaiya</a><br />          Instagram: <a rel="nofollow" target="blank" href="https://www.instagram.com/javaaid.algorithms">https://www.instagram.com/javaaid.algorithms</a><br />          Git Hub: <a rel="nofollow" target="blank" href="https://github.com/kanahaiya">https://github.com/kanahaiya</a><br />          Twitter: <a rel="nofollow" target="blank" href="https://twitter.com/Kanahaiyagupta">https://twitter.com/Kanahaiyagupta</a><br />          Linked in: <a rel="nofollow" target="blank" href="https://www.linkedin.com/in/kanahaiya-gupta">https://www.linkedin.com/in/kanahaiya-gupta</a><br /><br /><br />#repeatedstring #JAVAAID #HackerRankSolutions #implementation #HackerRank #JavaAidTutorials #programming #DataStructures #algorithms #coding #competitiveprogramming #java #codinginterview #problemsolving #KanahaiyaGupta #hackerrankchallenges
+</div>
+                        <div class="d-none"><span>how to</span><span>solve</span><span>hackerrank</span></div>
+                        <hr/>
+                        <div class="py-3">
+     <div id="disqus_thread"></div>
+                            <script>
+                            var disqus_config = function () {
+                                this.page.url = "https://lingvol.github.io/repeated-string-hackerrank-solution-optimal-approach.html";
+                                this.page.vid_identifier = "/repeated-string-hackerrank-solution-optimal-approach.html";
+                            };
+                            
+                            (function() { // DON'T EDIT BELOW THIS LINE
+                                var d = document, s = d.createElement('script');
+
+                                s.src = 'https://xlx.disqus.com/embed.js';
+
+                                s.setAttribute('data-timestamp', +new Date());
+                                (d.head || d.body).appendChild(s);
+                            })();
+                            </script>
+                            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+                         </div>
+                    </div>
+                </div>
+                <div class="position-sticky fixed-top d-md-block d-none">
+                    <div align="center" class="py-2">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+            <div class="mb-4">
+                <div class="resp-container py-3" id="sidebar_300"></div>
+            </div>
+                
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/can-you-build-muscle-using-only-bodyweight-exercises-aka-calisthenics.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/q1tWnJY_7E8/mqdefault.jpg" alt="Can You Build Muscle Using Only Bodyweight Exercises AKA Calisthenics?!">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Can You Build Muscle Using Only Bodyweight Exercises AKA Calisthenics?!</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/10-study-essentials-for-online-school-desk-accessories-study-tips-for.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/9GamWqQx3sw/mqdefault.jpg" alt="10 Study Essentials for online school 👩🏻‍💻 Desk accessories &amp; study tips for students!">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">10 Study Essentials for online school 👩🏻‍💻 Desk accessories &amp; study tips for students!</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/camerata-strings-concert-may-16-2019-frolicsome-finale-from-simple-sym.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/J6QbXgWuq_I/mqdefault.jpg" alt="Camerata Strings Concert May 16, 2019   Frolicsome Finale from Simple Symphony by Britten">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Camerata Strings Concert May 16, 2019   Frolicsome Finale from Simple Symphony by Britten</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/backstreet-boys-everybody-lyrics.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/POq2AznJO1Q/mqdefault.jpg" alt="Backstreet boys everybody lyrics">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Backstreet boys everybody lyrics</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/setting-up-for-surgery.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/JaSnvS-XNas/mqdefault.jpg" alt="Setting up for SURGERY">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Setting up for SURGERY</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/tips-pengurusan-masa-spm-matematik-how-to-manage-your-time.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/U9NDyDfO1YI/mqdefault.jpg" alt="TIPS PENGURUSAN MASA SPM MATEMATIK ( HOW TO MANAGE YOUR TIME)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">TIPS PENGURUSAN MASA SPM MATEMATIK ( HOW TO MANAGE YOUR TIME)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/who-s-your-top-5-dancehall-artiste-of-the-year-ps5-giveaway-let-s-be-h.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/GZfWBiDFjq4/mqdefault.jpg" alt="Who’s Your Top 5 Dancehall Artiste Of The Year? PS5 GIVEAWAY | Let’s Be Honest">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Who’s Your Top 5 Dancehall Artiste Of The Year? PS5 GIVEAWAY | Let’s Be Honest</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/amazing-facts-and-story-of-jewish-marriage-life-amazing-info.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/rUqpItC8Mp0/mqdefault.jpg" alt="Amazing Facts and Story of Jewish Marriage Life | Amazing Info">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Amazing Facts and Story of Jewish Marriage Life | Amazing Info</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/vehicles-abc-song.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/Ks_Hkx9oxiI/mqdefault.jpg" alt="Vehicles ABC Song">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Vehicles ABC Song</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/photograph-me-before-you.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/31CNgtIEN80/mqdefault.jpg" alt="Photograph - Me Before You">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Photograph - Me Before You</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/easy-hacks-to-make-your-videos-viral-photo-hacks-and-diy-ideas-by-123.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/0GUT3Egdd5k/mqdefault.jpg" alt="EASY HACKS TO MAKE YOUR VIDEOS VIRAL || Photo Hacks and DIY Ideas by 123 GO!">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">EASY HACKS TO MAKE YOUR VIDEOS VIRAL || Photo Hacks and DIY Ideas by 123 GO!</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/aventurero-yeison-jim-nez-video-oficial.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/n6zvD8kA3z4/mqdefault.jpg" alt="Aventurero - Yeison Jiménez (Video Oficial)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Aventurero - Yeison Jiménez (Video Oficial)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/borrtex-the-bright-morning-star-official-audio.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/VCsLXKH8dT4/mqdefault.jpg" alt="Borrtex - The Bright Morning Star (Official Audio)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Borrtex - The Bright Morning Star (Official Audio)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/minecraft-but-it-s-unexpected.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/eMuzYGSMvhM/mqdefault.jpg" alt="Minecraft but it&#39;s unexpected...">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Minecraft but it&#39;s unexpected...</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/twelvelittle-x-the-sensible-mama-sensible-clutch-during-quarantine-pac.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/x7-G6ctVQLY/mqdefault.jpg" alt="TWELVElittle x The Sensible Mama Sensible Clutch During Quarantine // Pack With Me">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">TWELVElittle x The Sensible Mama Sensible Clutch During Quarantine // Pack With Me</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/marck-espejo-game-4-1st-win-bani-jamra-vs-busaiteen-in-isa-bin-rashid.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/oQ_Dd_cNnT8/mqdefault.jpg" alt="Marck Espejo Game 4 (1st Win) | Bani Jamra vs Busaiteen in Isa Bin Rashid Bahrain Volleyball League">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Marck Espejo Game 4 (1st Win) | Bani Jamra vs Busaiteen in Isa Bin Rashid Bahrain Volleyball League</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/maroon-5-don-t-wanna-know-official-music-video.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/ANS9sSJA9Yc/mqdefault.jpg" alt="Maroon 5 - Don&#39;t Wanna Know (Official Music Video)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Maroon 5 - Don&#39;t Wanna Know (Official Music Video)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/entrepreneur-leaves-out-key-details-during-pitch-shark-tank-aus.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/Dqy8_1xqnpo/mqdefault.jpg" alt="Entrepreneur Leaves Out Key Details During Pitch | Shark Tank AUS">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Entrepreneur Leaves Out Key Details During Pitch | Shark Tank AUS</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/beauty-hacks-for-newbie-new-tips-for-lady-12.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/dwk_34d6e9Y/mqdefault.jpg" alt="Beauty Hacks For Newbie - New Tips For Lady #12">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Beauty Hacks For Newbie - New Tips For Lady #12</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/amid-slashed-red-tape-taiwan-rising-in-popularity-for-russian-tourists.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/ylNepsh04s4/mqdefault.jpg" alt="Amid slashed red tape, Taiwan rising in popularity for Russian tourists">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Amid slashed red tape, Taiwan rising in popularity for Russian tourists</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/among-us-short-film.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/t2jP1AVkItA/mqdefault.jpg" alt="AMONG US | Short Film">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">AMONG US | Short Film</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/nicole-moments-the-amazing-world-of-gumball.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/EepUmtKy_NQ/mqdefault.jpg" alt="Nicole Moments~ The Amazing World of Gumball">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Nicole Moments~ The Amazing World of Gumball</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/unboxing-my-favorite-unit-in-boom-beach-frontlines.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/l8C3EVftTgI/mqdefault.jpg" alt="Unboxing my FAVORITE Unit in Boom Beach Frontlines">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Unboxing my FAVORITE Unit in Boom Beach Frontlines</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/amazing-tile-installation-by-female-installer-part-2.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/LCrk5xZZk1s/mqdefault.jpg" alt="Amazing Tile Installation by Female Installer part 2">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Amazing Tile Installation by Female Installer part 2</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/blue-you-make-me-wanna-big-love-show.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/yIHzWfZF_AU/mqdefault.jpg" alt="Blue - You Make Me Wanna (&quot;Big Love Show&quot;)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Blue - You Make Me Wanna (&quot;Big Love Show&quot;)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/mantra-for-favourable-result-in-exam-chanted-216-times.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/L6CheSUiNe8/mqdefault.jpg" alt="Mantra for Favourable result  In Exam chanted 216 times">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Mantra for Favourable result  In Exam chanted 216 times</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/donald-sterling-s-confidante-v-stiviano-speaks-out.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/is9vJgoPsg4/mqdefault.jpg" alt="Donald Sterling&#39;s Confidante V.Stiviano Speaks Out">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Donald Sterling&#39;s Confidante V.Stiviano Speaks Out</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/base-protocol-overtakes-the-number-1-trading-volume-on-uniswap-trading.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/N7KQrSGVOH4/mqdefault.jpg" alt="Base Protocol overtakes the number 1 trading volume on uniswap ! Trading fees are making us $$$">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Base Protocol overtakes the number 1 trading volume on uniswap ! Trading fees are making us $$$</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/ghanaians-pass-judgement-on-coach-kwesiappiah.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/bs-y19QyR7U/mqdefault.jpg" alt="Ghanaians pass judgement on Coach #KwesiAppiah">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Ghanaians pass judgement on Coach #KwesiAppiah</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/13-idioms-for-illness-sickness-health-english-vocabulary-lesson-spon.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/jd8rE04IqQg/mqdefault.jpg" alt="13 IDIOMS for ILLNESS, SICKNESS &amp; HEALTH | English Vocabulary Lesson #Spon">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">13 IDIOMS for ILLNESS, SICKNESS &amp; HEALTH | English Vocabulary Lesson #Spon</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/mature-love-love-is-all-the-dearer-in-distance-new-whatsapp-status-vid.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/jwbVW-szln0/mqdefault.jpg" alt="Mature Love | Love is all the dearer in distance | New Whatsapp status video 2019">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Mature Love | Love is all the dearer in distance | New Whatsapp status video 2019</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/devil-may-cry-4-se-ost-let-s-just-see-hq-extended-no-copyright-music.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/UZfl2zTjM5g/mqdefault.jpg" alt="Devil May Cry 4 SE OST Let&#39;s Just See HQ Extended  [No Copyright Music]">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Devil May Cry 4 SE OST Let&#39;s Just See HQ Extended  [No Copyright Music]</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/encontre-o-emoji-diferente-em-30-segundos-parte-3.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/8xB07EXjxiQ/mqdefault.jpg" alt="ENCONTRE O EMOJI DIFERENTE EM 30 SEGUNDOS! PARTE 3">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">ENCONTRE O EMOJI DIFERENTE EM 30 SEGUNDOS! PARTE 3</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/doctor-who-prom-2013-17-song-for-fifty.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/TJrNy53U6pA/mqdefault.jpg" alt="Doctor Who Prom 2013 - 17 - Song for Fifty">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Doctor Who Prom 2013 - 17 - Song for Fifty</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/word-file-recovery-solution-how-to-recover-unsaved-deleted-word-docume.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/4oZI5sMRviY/mqdefault.jpg" alt="Word File Recovery Solution | How to Recover Unsaved/Deleted Word Documents?">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Word File Recovery Solution | How to Recover Unsaved/Deleted Word Documents?</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/dark-grey-bushchat-calls-and-flicks-tail-at-wildfilmsindia-sanctuary-b.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/o9N9MEM_ahY/mqdefault.jpg" alt="Dark Grey Bushchat calls and flicks tail, at wildfilmsindia sanctuary, balancing delicately on twig">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Dark Grey Bushchat calls and flicks tail, at wildfilmsindia sanctuary, balancing delicately on twig</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/madonna-holiday-ultrasound-extended-version.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/EaDjbmWTjy8/mqdefault.jpg" alt="Madonna Holiday (Ultrasound Extended Version)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Madonna Holiday (Ultrasound Extended Version)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/introduction-to-the-surrounding-environment-of-nagaoka-university-of-t.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/RRuAoWauQLw/mqdefault.jpg" alt="Introduction to the Surrounding Environment of Nagaoka University of Technology">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Introduction to the Surrounding Environment of Nagaoka University of Technology</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/03-3-2-householder-transformations-part-1.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/6TIVIw4B5VA/mqdefault.jpg" alt="03.3.2 Householder transformations, part 1">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">03.3.2 Householder transformations, part 1</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/introduction.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/7yqOF9V25VA/mqdefault.jpg" alt="Introduction">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Introduction</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/wherever-you-will-go-the-calling-boyce-avenue-acoustic-cover-on-spotif.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/s_BU8YCjV1M/mqdefault.jpg" alt="Wherever You Will Go - The Calling (Boyce Avenue acoustic cover) on Spotify &amp; Apple">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Wherever You Will Go - The Calling (Boyce Avenue acoustic cover) on Spotify &amp; Apple</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/ballycastle-forest-a-proper-enduro-ride.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/M049rQ6jRgo/mqdefault.jpg" alt="BALLYCASTLE FOREST A PROPER ENDURO RIDE!!">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">BALLYCASTLE FOREST A PROPER ENDURO RIDE!!</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/the-dangerous-mansion-c-i-d-real-heroes.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/FUa8oj18v1I/mqdefault.jpg" alt="The Dangerous Mansion | C.I.D | सीआईडी | Real Heroes">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">The Dangerous Mansion | C.I.D | सीआईडी | Real Heroes</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/memes-that-i-can-t-explain-to-my-parents.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/gIP9vpRBPOU/mqdefault.jpg" alt="memes that i can&#39;t explain to my parents">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">memes that i can&#39;t explain to my parents</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/what-does-organic-mean-and-should-you-buy-organic-foods.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/UnuP4vrLvc4/mqdefault.jpg" alt="What Does &quot;Organic&quot; Mean, and Should You Buy Organic Foods?">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">What Does &quot;Organic&quot; Mean, and Should You Buy Organic Foods?</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/wonderful-x-rattinan-clinic.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/FkvlvHlIrzY/mqdefault.jpg" alt="รีวิวพลีชีพ ผ่าตัดกระเพาะ ลดน้ำหนัก (ผอมถาวรมั้ย ?) Wonderful X Rattinan Clinic">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">รีวิวพลีชีพ ผ่าตัดกระเพาะ ลดน้ำหนัก (ผอมถาวรมั้ย ?) Wonderful X Rattinan Clinic</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/iphone-se-review.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/Tx_lyy4-SeY/mqdefault.jpg" alt="iPhone SE Review!">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">iPhone SE Review!</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/bren-brown-s-parenting-manifesto-that-moved-oprah-to-tears-supersoul-s.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/hhHI5qEtomA/mqdefault.jpg" alt="Brené Brown’s Parenting Manifesto That Moved Oprah To Tears | SuperSoul Sunday | OWN">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Brené Brown’s Parenting Manifesto That Moved Oprah To Tears | SuperSoul Sunday | OWN</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://lingvol.github.io/i-failed-the-easiest-test.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/olx4XJybNhM/mqdefault.jpg" alt="I FAILED the EASIEST Test">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">I FAILED the EASIEST Test</h2>
+    </div>
+
+            </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+        function load_vid() { var player = document.getElementById('video-player'); player.innerHTML = labnolThumb(); player.onclick = labnolIframe; } function labnolThumb() { return '<div class="d-flex align-items-center justify-content-center"><div class="image-16by9"><img class="w-100" src="https://lingvol.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/d5xLkTvJDWY/hqdefault.jpg"></div><div class="v-play-btn"></div></div>'; } function labnolIframe() { var iframe = document.createElement("iframe"); iframe.setAttribute("src", "//www.youtube-nocookie.com/embed/d5xLkTvJDWY?rel=0&amp;showinfo=0"); iframe.setAttribute("frameborder", "0"); iframe.setAttribute("allowfullscreen", "1"); var div = document.createElement("div"); div.setAttribute("class", "embed-responsive embed-responsive-16by9"); div.innerHTML = iframe.outerHTML; this.parentNode.replaceChild(div, this); } load_vid()
+    </script>
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
+        <footer class="mt-auto bg-white pt-4">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <h5 class="text-uppercase">Lingvol Network</h5>
+                    <p>Entertainment content from all over the web.</p>
+                </div>
+                <hr class="clearfix w-100 d-md-none pb-3">
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5>Privacy & Terms</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="">DMCA</a></li>
+                        <li><a href="">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center py-3"> © Copyright : <a target="_blank" rel="noopener" href="https://www.youtube.com"> youtube.com</a></div>
+    </footer>
+    <script>
+        var cb = function() { var link = document.createElement('link'); link.rel = 'stylesheet'; link.href = 'https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css'; var h = document.getElementsByTagName('head')[0]; h.appendChild(link); if (link.addEventListener) { link.addEventListener('load', function() { document.getElementById('preloading').style.display = "none"; }, false); } }; var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame; if (raf) raf(cb); else window.addEventListener('load', cb);
+    </script>
+    <script async="" src="https://lingvol.github.io/js/app.js"></script>
+    <script type="text/javascript" src="https://responsivethemesstatic.github.io/static/wp.js"></script>
+    <script type="text/javascript">
+        if(!Histats_variables){var Histats_variables=[];}
+        Histats_variables.push("tags","https://lingvol.github.io");
+        var _Hasync= _Hasync|| [];
+        _Hasync.push(['Histats.start', '1,4360507,4,0,0,0,00000000']);
+        _Hasync.push(['Histats.fasi', '1']);
+        _Hasync.push(['Histats.track_hits', '']);
+        (function() {
+        var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+        hs.src = ('//s10.histats.com/js15_as.js');
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+        })();
+    </script>
+</body>
+</html>
